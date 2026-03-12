@@ -1,0 +1,57 @@
+<html>
+    <head><title>Weirdos Unblocked Games | Help Page</title><link rel="shortcut icon" href=favicon.ico"></head>
+    <body style="font-size:20px;font-family:sans-serif;">
+        <div class="bg"></div>
+        <div class="header">
+            <div id="TEMP" style="font-size:80px;left:5px;position:absolute">Help Page</div>
+        </div>
+        <div class="helpbox"id="onlinegames"style="top:110px;"><h2>What is Guaranteed vs Outsourced?</h2><p>Guaranteed (or offline) games are completely local and stored on this site. They will continue working barring a site shutdown or catastrophic failure. Outsourced (or online) games, rely on another site being online that I do not control and cannot remake if it becomes blocked.</p></div>
+        <div class="helpbox"id="gamenotworking"style="top:110px;"><h2>A Game Isn't Working!</h2><p>First off, if it's under the Outsourced heading, see the paragraph above. If it's a guaranteed game, I either broke something or the server isn't connecting, but in the latter case it should be impossible for you to read this anyways. Otherwise, it could just be a slow loading time, in which case try to just reload or reopen the tab. If the problem persists, please contact us at (insert support link here)</p></div>
+    </body>
+</html>
+<script>
+    let list = ["onlinegames", "gamenotworking"];
+    let result;
+    const searchParams = new URLSearchParams(window.location.search);
+    if(searchParams.has("help")){
+        for(var i=0;i<list.length;i++){
+            if(searchParams.get("help")==list[i]){
+                result = list[i];
+            }
+        }
+    }    
+    for(var i=0;i<25501;i++){
+        document.getElementById(result).style.background = (i/100,i/100,0);
+    }
+</script>
+<style>
+    div.bg{
+        width:100%;
+        height:100%;
+        background-color:black;
+        position:fixed;
+        left:0;
+        top:0;
+    }
+    div.header {
+        background-color: green;
+        width: 100%;
+        height: 100px;
+        left: 0px;
+        top: 0px;
+        position: absolute;
+        z-index: 0;
+    }
+    .helpbox{
+        color:green;
+        border: 5px solid green;
+        padding:10px;
+        margin:10px;
+        width:1000px;
+        background:black;
+        /*height:100px;*/
+        left:0px;
+        position:relative;
+        transition:0.5s;
+    }
+</style>
